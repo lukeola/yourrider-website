@@ -1,0 +1,10 @@
+.header {
+    z-index: 999;
+    background-color: blue;
+    
+   
+}
+
+.header-bg {
+    background-color: rgba(26, 93, 4, 0.58);
+}
