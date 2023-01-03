@@ -31,10 +31,10 @@ const Footer = () => {
         <FooterColumnThree>
             <ColumnThreeHeading>Follow our Handles</ColumnThreeHeading>
             <ColumnThreeIcons>
-            <a href='https://facebook.com/yourriderltd'><BsFacebook/> </a>
-            <a href='https://twitter.com/yourriderltd'><AiFillTwitterCircle/> </a>
-            <a href='https://www.instagram.com/yourrider.co/'><AiFillInstagram/> </a>
-            <a href='https://www.linkedin.com/company/your-rider-limited'><AiFillLinkedin/> </a>
+            <a href='https://facebook.com/yourriderltd' style={{textDecoration:'none', color:'white'}}><BsFacebook/> </a>
+            <a href='https://twitter.com/yourriderltd' style={{textDecoration:'none', color:'white'}}><AiFillTwitterCircle/> </a>
+            <a href='https://www.instagram.com/yourrider.co/' style={{textDecoration:'none', color:'white'}}><AiFillInstagram/> </a>
+            <a href='https://www.linkedin.com/company/your-rider-limited' style={{textDecoration:'none', color:'white'}}><AiFillLinkedin/> </a>
             </ColumnThreeIcons>
         </FooterColumnThree>
 

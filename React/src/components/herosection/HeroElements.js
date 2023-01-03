@@ -9,7 +9,10 @@ export const HeroContainer = styled.div`
     flex-wrap: wrap;
     display: flex;
     
-    
+    @media screen and (max-width: 720px) {
+        height: 500px;
+        width: 100%;
+    }
 `
 export const HeroBgImage = styled.div`
     position: absolute;
@@ -22,21 +25,40 @@ export const HeroBgImage = styled.div`
 
 export const HeroHeader = styled.div`
     position: relative;
-    width: 623px;
+    width: 50%;
     height: 174px;
-    left: 489px;
-    top: 101px;
+    left: 30%;
+    top: 10%;
+    align-items:center;
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 800;
     font-size: 64px;
     line-height: 87px;
     color: #FCFCFF;
+
+    @media screen and (max-width: 720px) {
+        position: absolute;
+        width: 70%;
+        left: 20%;
+        height: auto;
+        align-items:center;
+        margin-top: 66px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 180%;
+        line-height: 29px;
+
+        color: #FFFFFF;
+        
+    }
 `
 
 export const HeroText = styled.div`
     position: absolute;
-    width: 600px;
+    width: 60%;
     height: 156px;
     font-style: normal;
     font-weight: 400;
@@ -44,8 +66,17 @@ export const HeroText = styled.div`
     line-height: 52px;
     text-align: center;
     color: #FFFFFF;
-    left: 499px;
-    top: 378px;
+    left: 20%;
+    top: 53%;
+
+    @media screen and (max-width: 720px) {
+        position: relative;
+        width: 99%;
+        height: auto;
+        top: 45%;
+        left: 0;
+        line-height: 32px;
+    }
 `
 
 export const TrackingBox = styled.div`

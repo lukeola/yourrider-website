@@ -6,7 +6,7 @@ import ArticleList from './ArticleList'
 function Flaskreact (props) { 
 
     const [articles, setArticles] = useState([])
-    const [editedArticle , setEditedArticle] = useState([])
+    const editArticle = props.editArticle
       
   
     useEffect(() => {
@@ -23,9 +23,6 @@ function Flaskreact (props) {
   
     }, [])
   
-    const editArticle = (article) => {
-      setEditedArticle(article)
-    }
        
          
     return (
@@ -33,7 +30,6 @@ function Flaskreact (props) {
         <div>
             <h1>Flask and ReactJS Course</h1>
 
-        
            <ArticleList articles = {articles} editArticle = {editArticle}/>
 
         </div>

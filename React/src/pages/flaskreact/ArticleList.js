@@ -4,7 +4,7 @@ import { DeleteButton, UpdateButton } from './FlaskElements'
 
 const ArticleList = (props) => {
   
-    const [editedArticle , setEditedArticle] = useState([])
+    const [editedArticle , setEditedArticle] = useState(null)
 
     const editArticle = (article) => {
         setEditedArticle(article)
@@ -27,7 +27,7 @@ const ArticleList = (props) => {
                
             })}
 
-            <ArticleForm article = {editedArticle}/>
+            {editedArticle ? <ArticleForm article = {editedArticle}/>:null}
 </div>
   )
 }

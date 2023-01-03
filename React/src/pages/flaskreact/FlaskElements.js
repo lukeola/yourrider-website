@@ -10,3 +10,6 @@ export const UpdateButton = styled.button`
     padding: 10px;
     color: blue;
 `
+export const Messagebox = styled.textarea`
+    padding: 5px;
+`

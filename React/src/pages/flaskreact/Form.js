@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Bloglist from './Bloglist'
 
 
@@ -13,19 +13,31 @@ function Form() {
       setAge(33)
     }
 
-    const [blogs, setBlogs] = useState([
-      {title:'Title 1', body: ' this is my first body', author:'luke', id: 1},
-      {title:'Title 2', body: ' this is my second body', author:'olawale', id: 2},
-      {title:'Title 3', body: ' this is my third body', author:'rotimi', id: 3}
-    ])
- 
+    const [blogs, setBlogs] = useState(null)
+    
+    const deleteFunction = (id) => {
+      const newBlog = blogs.filter(blog => blog.id !== id);
+      setBlogs(newBlog);
+    }
+
+    useEffect(() => {
+      fetch('http://localhost:5000/get')
+        .then(res => {
+          return res.json();
+        })
+        .then(data => {
+          console.log(data)
+          setBlogs(data)
+        })
+    } ,[]) 
   return (
     <div>
        <h1> at {name} the number is {age}</h1>
-        <button style={{padding:'10px'}} onClick={buttonclick}>Click Here</button>
+        <button style={{padding:'10px'}} onClick={ () => buttonclick ()}>Click Here</button>
     
     
-    <Bloglist blogs={blogs}/>
+    {blogs && <Bloglist blogs={blogs} title={'First Blog'} deleteFunction= {deleteFunction}/>}
+  
     </div>
 
     

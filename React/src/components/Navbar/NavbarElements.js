@@ -11,8 +11,21 @@ export const Nav = styled.nav`
     left: 0px;
     top: 0px;
     background: #FCFCFF;
-    flex-wrap: wrap;
     display: flex;
+    z-index: 100;
+
+    @media only screen and (max-width: 1024px){
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 110;
+    }
     
 `;
 
@@ -30,7 +43,7 @@ export const NavLogo = styled.div`
 
 
 export const NavMenu = styled.div`
-    position: absolute;
+    position: fixed;
     height: 26px;
     left: 514px;
     top: 34px;
@@ -45,8 +58,18 @@ export const NavMenu = styled.div`
 
 
 
-    @media screen and (max-width: 768px) {
-        display: none;
+    @media only screen and (max-width: 1024px){
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #FCFCFF;
+        z-index: 100;
     }
 `;
 export const NavLink = styled(Link)`
@@ -99,7 +122,7 @@ export const NavBtn = styled.nav`
     }
 `
 
-export const NavBtnLink = styled(Link)`
+export const NavBtnLink = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -19,11 +19,13 @@ ma = Marshmallow(app)
 class Articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
+    author = db.Column(db.String(100))
     body = db.Column(db.Text())
     date = db.Column(db.DateTime, default=datetime.datetime.now)
 
-    def __init__(self, title, body):
+    def __init__(self, title, author, body):
         self.title = title
+        self.author = author
         self.body = body
 
 
@@ -31,7 +33,7 @@ class Articles(db.Model):
 
 class ArticleSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'title', 'body', 'date')
+        fields = ('id', 'title', 'author', 'body', 'date')
 
 
 article_schema = ArticleSchema()
@@ -58,9 +60,11 @@ def update_article(id):
     article = Articles.query.get(id)
 
     title = request.json['title']
+    author = request.json['author']
     body = request.json['body']
 
     article.title = title
+    article.author = author
     article.body = body
 
     db.session.commit()
@@ -79,6 +83,7 @@ def article_delete(id):
 @app.route("/add", methods=['POST'])
 def add_articles():
     title = request.json['title']
+    author = request.json['author']
     body = request.json['body']
 
     articles = Articles(title, body)
